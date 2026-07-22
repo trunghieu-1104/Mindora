@@ -1,6 +1,6 @@
 # Mindora AI
 
-Ứng dụng web hỗ trợ sức khỏe tâm thần với AI companion tên **Mia** — lắng nghe, đồng hành, và gợi ý những điều nhỏ bé giúp bạn thấy tốt hơn mỗi ngày.
+Ứng dụng web hỗ trợ sức khỏe tâm thần với AI companion tên **Dora** — lắng nghe, đồng hành, và gợi ý những điều nhỏ bé giúp bạn thấy tốt hơn mỗi ngày.
 
 ---
 
