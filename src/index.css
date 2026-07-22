@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary:        #1E4E79;
+    --color-secondary:      #C9A227;
+    --color-accent:         #6FA3D0;
+    --color-bg:             #FAF6EC;
+    --color-text-main:      #16233D;
+    --color-text-sub:       #6B7686;
+    --color-warning:        #F59E0B;
+    --color-danger:         #DC2626;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #FAF6EC;
+    color: #16233D;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #16233D;
+  }
+
+  /* Image Background Utilities */
+  .bg-organic-pattern {
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  @keyframes waveFlow {
+    0%   { transform: scale(1.12) translate(0%,    0%)    rotate(0deg);   }
+    20%  { transform: scale(1.15) translate(-2.5%, 1.5%)  rotate(0.4deg); }
+    40%  { transform: scale(1.10) translate(2%,   -2%)    rotate(-0.3deg);}
+    60%  { transform: scale(1.14) translate(2.5%,  1.5%)  rotate(0.5deg); }
+    80%  { transform: scale(1.11) translate(-1.5%, 2%)    rotate(-0.4deg);}
+    100% { transform: scale(1.12) translate(0%,    0%)    rotate(0deg);   }
+  }
+
+  .animate-ken-burns {
+    animation: waveFlow 18s ease-in-out infinite;
+  }
+
+  .bg-chat-blobs {
+    background-image: url('/chat.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-mint-words {
+    background-image: url('/từ khóa.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-explore-wave {
+    background-image: url('/Explore.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-journal-notebook {
+    background-image: url('/journal.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Notebook Lined Paper style */
+  .notebook-paper {
+    background: #fff;
+    background-image: linear-gradient(#efe7d3 1px, transparent 1px);
+    background-size: 100% 2rem;
+    line-height: 2rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-ui font-medium px-6 py-3 rounded-full
+           hover:bg-primary-dark transition-all duration-300 ease-in-out
+           shadow-card hover:shadow-soft active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white border-2 border-primary text-text-main font-ui font-medium px-6 py-3 rounded-full
+           hover:bg-primary-light transition-all duration-300 ease-in-out
+           shadow-card active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-sub font-ui font-medium px-6 py-3 rounded-full
+           hover:bg-primary-light hover:text-text-main transition-all duration-300 ease-in-out;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-card p-6;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-soft hover:scale-[1.02] transition-all duration-300 ease-in-out cursor-pointer;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-white rounded-3xl rounded-tl-sm shadow-bubble px-4 py-3 max-w-[80%]
+           text-text-main font-body text-sm leading-relaxed animate-fade-up;
+  }
+
+  .chat-bubble-user {
+    @apply bg-primary rounded-3xl rounded-tr-sm shadow-bubble px-4 py-3 max-w-[80%]
+           text-white font-body text-sm leading-relaxed animate-fade-up;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-primary/40 rounded-2xl px-4 py-3
+           font-body text-text-main placeholder-text-sub
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20
+           transition-all duration-200;
+  }
+
+  .mood-chip {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-ui text-sm font-medium
+           cursor-pointer transition-all duration-200 select-none;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-text-main leading-tight;
+  }
+
+  .section-sub {
+    @apply font-body text-text-sub text-base md:text-lg leading-relaxed;
+  }
+
+  /* Custom scrollbar for chat messages */
+  .chat-messages-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chat-messages-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chat-messages-container::-webkit-scrollbar-thumb {
+    background: rgba(30, 78, 121, 0.25);
+    border-radius: 99px;
+  }
+  .chat-messages-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 78, 121, 0.45);
+  }
+}
